@@ -30,9 +30,9 @@ class GenericnamesPlugin(b3.plugin.Plugin):
             client = event.client
             for x in self._GenericNames:
                 if re.match(x, client.name):
-                    self.debug("Kicking %s because his name is generic name" %(event.client.exactName))
+                    self.debug("%s has a generic name" %(event.client.exactName))
                     client.kick("^1Warning: ^7Change your name by typing ^1/name^7 on your console or ask for help on ^3@forum.plutonium.pw^7", keyword="generic_name")
-                    return 
+                    return
                 else:
-                    self.debug("%s don't have generic name" %(client.name))
+                    self.debug("%s don't have generic name" %(event.client.exactName))
                 return
